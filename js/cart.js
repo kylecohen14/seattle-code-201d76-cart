@@ -23,11 +23,23 @@ function renderCart() {
 
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 function clearCart() {
-  let clearRow = document.querySelectorAll('tr').remove();
+  let clearRow = document.cart.querySelector("tr").remove();
 }
 // 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
+  let cart = document.querySelector('tbody');
+  
+  for (let i in Cart.allCart) {
+    let newRow = document.createElement('tr');
+    cart.appendChild(newRow);
+    let newProduct = document.createElement('td');
+    newProduct.textContent = `${Cart.allCart[i].name}`;
+    newRow.appendChild(newProduct);
+    let newQuantity = document.createElement('td');
+    newQuantity.textContent = `${Cart.allCart[i].quantity}`;
+    newRow.appendChild(newQuantity);
+  }
 
   // TODO: Find the table body
 

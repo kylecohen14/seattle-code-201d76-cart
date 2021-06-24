@@ -11,7 +11,6 @@ Cart.prototype.addItem = function(product, quantity) {
   let myNewCartItem = new CartItem(product, quantity);
   // push into the items array
   this.items.push(myNewCartItem);
-
   // this.items.push(new CartItem(product, quantity));
 };
 
