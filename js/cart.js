@@ -25,7 +25,7 @@ function renderCart() {
 function clearCart() {
   let clearRow = document.querySelectorAll('tr').remove();
 }
-
+// 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
 
