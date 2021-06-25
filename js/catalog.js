@@ -29,26 +29,16 @@ function handleSubmit(event) {
   let quantity = event.target.quantity.value;
   // Do all the things ...
   // hey if you want to you can pass values to these functions 
-  addSelectedItemToCart(name, quantity);
+  addSelectedItemToCart();
   cart.saveToLocalStorage();
   updateCounter(quantity);
   updateCartPreview(name, quantity);
 
 }
 // TODO: Add the selected item and quantity to the cart
-function addSelectedItemToCart() {
+function addSelectedItemToCart(name, quantity) {
   // TODO: suss out the item picked from the select list
-  let cart = document.getElementById('cart-container').innerHTML = '';
-  for (let i in Cart.allCart) {
-    let newRow = document.createElement('tr');
-    cart.appendChild(newRow);
-    let newProduct = document.createElement('td');
-    newProduct.textContent = `${Cart.allCart[i].name}`;
-    newRow.appendChild(newProduct);
-    let newQuantity = document.createElement('td');
-    newQuantity.textContent = `${Cart.allCart[i].quantity}`;
-    newRow.appendChild(newQuantity);
-  }
+  new Cart(name, quantity);
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
 }
